@@ -45,6 +45,7 @@
     "hapi-cors": "^1.0.1",
     "jsx-loader": "^0.13.2",
     "modern-standard": "^1.4.1",
+    "nodemon": "^1.11.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   }
