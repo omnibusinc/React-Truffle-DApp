@@ -7,6 +7,11 @@ cd react-redux-webpack-hapi-mongoose
 npm install
 ```
 
+Running API Server and SPA concurrently:
+```
+npm start
+```
+
 Running API Server (OSX):
 ```
 npm run server

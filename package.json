@@ -5,7 +5,7 @@
   "scripts": {
     "server": "DEBUG=* nodemon server/index.js",
     "dev": "webpack-dev-server --content-base client --devtool #source-map --history-api-fallback --hot --inline --progress --colors --port 3001",
-    "both": "concurrently --kill-others \"DEBUG=* nodemon server/index.js\" \"webpack-dev-server --content-base client --devtool #source-map --history-api-fallback --hot --inline --progress --colors --port 3001\""
+    "start": "concurrently --kill-others \"DEBUG=* nodemon server/index.js\" \"npm run dev\""
   },
   "author": "Jason Steele <jason.omnibus@gmail.com",
   "license": "MPL-2.0",
