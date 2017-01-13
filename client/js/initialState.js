@@ -1,5 +1,5 @@
 module.exports = function() {
   return {
-    example: 'an example string'
+    example: 'initial value from initialState.js'
   };
 }

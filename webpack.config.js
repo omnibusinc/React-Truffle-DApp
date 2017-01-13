@@ -1,9 +1,7 @@
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
-  entry: {
-    app: './client/js/app.jsx'
-  },
+  entry: './client/js/app.jsx',
   output: {
     path: __dirname,
     filename: '/client/js/bundle.js',
@@ -13,8 +11,9 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel', // 'babel-loader' is also a legal name to reference
-        query: {compact: true,
+        loader: 'babel-loader',
+        query: {
+          compact: true,
           presets: ['es2015', 'react']
         }
       },
@@ -22,7 +21,8 @@ module.exports = {
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {compact: true,
+        query: {
+          compact: true,
           presets: ['es2015', 'react']
         }
       },
@@ -33,7 +33,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.es6'],
   },
   postcss: function () {
     return [autoprefixer];
