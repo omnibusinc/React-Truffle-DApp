@@ -1,5 +1,6 @@
 const Hapi = require('hapi');
 const debug = require('debug')('server');
+const routes = require('./routes/routes');
 
 const port = 3000;
 const profile = process.env.NODE_ENV || 'development';
@@ -7,6 +8,7 @@ const runtime = {
   profile,
   config: require('../config/server.config.' + profile + '.js'),
 };
+const mongoose = require('./mongoose');
 
 const server = new Hapi.Server();
 server.connection({ port: port });
@@ -16,34 +18,7 @@ server.register(require('inert'), function (err) {
       throw err;
   }
 
-  server.route({
-    method: 'GET',
-    path: '/api/example',
-    handler: function(request, reply) {
-      let obj = {
-        example: 'updated value from API'
-      };
-      reply(obj);
-    },
-    config: {
-      cors: {
-        origin: ['http://localhost:3001'],
-        additionalHeaders: ['cache-control', 'x-requested-with']
-      }
-    }
-  });
-
-  server.route({
-    method: 'GET',
-    path: '/{param*}',
-    handler: {
-      directory: {
-        path: '/',
-        listing: false,
-        index: true
-      }
-    }
-  });
+  server.route(routes.routes);
 
   server.ext('onPreResponse', function (request, reply) {
     if (request.response.isBoom) {

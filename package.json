@@ -21,6 +21,7 @@
     "inert": "^3.2.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.7.6",
+    "nconf": "^0.8.4",
     "postcss": "^5.0.19",
     "postcss-cssnext": "^2.5.1",
     "postcss-loader": "^0.9.1",

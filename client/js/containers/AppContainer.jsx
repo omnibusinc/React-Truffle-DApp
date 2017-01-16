@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import { Link } from 'react-router';
-import { getExample } from '../actionCreators/exampleActionCreators';
+import { getExample, getMongooseExample } from '../actionCreators/exampleActionCreators';
 
 class AppContainer extends Component {
 
   getExampleFromServerAPI() {
     this.props.getExample();
+  }
+
+  getExampleFromMongoose() {
+    this.props.getMongooseExample();
   }
 
   render() {
@@ -23,6 +27,7 @@ class AppContainer extends Component {
           Value of 'example' is: <b>{ example }</b>
         </p>
         <button onClick={ this.getExampleFromServerAPI.bind(this) }>Get 'example' from server API</button>
+        <button onClick={ this.getExampleFromMongoose.bind(this) }>Get 'example' from Mongo(ose)</button>
       </div>
     );
   }
@@ -33,7 +38,7 @@ class AppContainer extends Component {
 const mapStateToProps = ({ example }) => ({ example });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getExample }, dispatch);
+  return bindActionCreators({ getExample, getMongooseExample }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);

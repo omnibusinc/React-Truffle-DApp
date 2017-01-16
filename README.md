@@ -7,6 +7,17 @@ cd react-redux-webpack-hapi-mongoose
 npm install
 ```
 
+Mongo setup
+  config options for mongo are defined in /config/server.config.development.js
+  Default database name is 'rrwhm'
+  Create a collection called 'examples'
+  Insert a document like: 
+```
+{
+    "example" : "value from Mongo"
+}
+```
+
 Running API Server and SPA concurrently:
 ```
 npm start
