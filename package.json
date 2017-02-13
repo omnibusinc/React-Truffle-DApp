@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Starting point for react/redux/webpack/hapi/mongoose projects",
   "scripts": {
-    "server": "DEBUG=* nodemon server/index.js",
+    "server": "cross-env DEBUG=* nodemon server/index.js",
     "dev": "webpack-dev-server --content-base client --devtool #source-map --history-api-fallback --hot --inline --progress --colors --port 3001",
     "start": "concurrently --kill-others \"DEBUG=* nodemon server/index.js\" \"npm run dev\""
   },
@@ -43,6 +43,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "concurrently": "^3.1.0",
+    "cross-env": "^3.1.4",
     "hapi-cors": "^1.0.1",
     "jsx-loader": "^0.13.2",
     "modern-standard": "^1.4.1",
