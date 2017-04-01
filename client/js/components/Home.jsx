@@ -11,7 +11,7 @@ const Home = () => (
     </p>
     <p>
       That said, there is a bit of architecture in the javascript code, however, it is only there as an example of how routing, actions, action creators, and reducers work for those new to React and Redux,
-      and how to build a basic API, create a model in Mongoose, and query Mongo for those new to Hapi/Mongo(ose).
+      and how to build a basic API
     </p>
   </div>
 );

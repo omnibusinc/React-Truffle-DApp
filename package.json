@@ -1,11 +1,11 @@
 {
-  "name": "react-redux-webpack-hapi-mongoose-starter",
+  "name": "react-redux-webpack-hapi-web3-starter",
   "version": "1.0.0",
-  "description": "Starting point for react/redux/webpack/hapi/mongoose projects",
+  "description": "Starting point for react/redux/webpack/hapi/web3 projects",
   "scripts": {
     "server": "cross-env DEBUG=* nodemon server/index.js",
     "dev": "webpack-dev-server --content-base client --devtool #source-map --history-api-fallback --hot --inline --progress --colors --port 3001",
-    "start": "concurrently --kill-others \"DEBUG=* nodemon server/index.js\" \"npm run dev\""
+    "start": "concurrently --kill-others \" cross-env DEBUG=* nodemon server/index.js\" \"npm run dev\""
   },
   "author": "Jason Steele <jason.omnibus@gmail.com",
   "license": "MPL-2.0",
@@ -15,12 +15,12 @@
     "boom": "^4.2.0",
     "css-loader": "^0.23.1",
     "debug": "^2.2.0",
+    "givethdirectory": "0.0.32",
     "hapi": "^13.0.0",
     "hapi-async-handler": "^1.0.3",
     "hapi-cors": "^1.0.1",
     "inert": "^3.2.0",
     "lodash": "^4.17.4",
-    "mongoose": "^4.7.6",
     "nconf": "^0.8.4",
     "postcss": "^5.0.19",
     "postcss-cssnext": "^2.5.1",
@@ -34,7 +34,9 @@
     "redux": "^3.6.0",
     "redux-saga": "^0.14.2",
     "redux-thunk": "^2.1.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "web3": "^0.18.4",
+    "web3-loader": "^1.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",
@@ -45,9 +47,11 @@
     "concurrently": "^3.1.0",
     "cross-env": "^3.1.4",
     "hapi-cors": "^1.0.1",
+    "json-loader": "^0.5.4",
     "jsx-loader": "^0.13.2",
     "modern-standard": "^1.4.1",
     "nodemon": "^1.11.0",
+    "truffle-contract": "^2.0.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   }

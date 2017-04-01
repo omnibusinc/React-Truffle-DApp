@@ -8,7 +8,6 @@ const runtime = {
   profile,
   config: require('../config/server.config.' + profile + '.js'),
 };
-const mongoose = require('./mongoose');
 
 const server = new Hapi.Server();
 server.connection({ port: port });

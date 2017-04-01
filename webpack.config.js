@@ -29,7 +29,11 @@ module.exports = {
       {
         test:   /\.css$/,
         loader: "style-loader!css-loader?modules!postcss-loader"
-      }
+      },
+      {
+          test: /\.json$/,
+          loaders: [ "json-loader" ],
+      },
     ],
   },
   resolve: {
