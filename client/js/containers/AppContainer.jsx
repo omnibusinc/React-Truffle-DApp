@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import { Link } from 'react-router';
-import { getExample } from '../actionCreators/exampleActionCreators';
 
 class AppContainer extends Component {
 
-  getExampleFromServerAPI() {
-    this.props.getExample();
-  }
-
   render() {
-    const { example } = this.props;
+    const { balance, etherBalance, address } = this.props;
     return(
       <div>
         <h2>This is the App's Container Component</h2>
@@ -19,21 +14,15 @@ class AppContainer extends Component {
         <Link to={ '/about'}>About</Link>
         { this.props.children }
         <hr />
-        <p>
-          Value of 'example' is: <b>{ example }</b>
-        </p>
-        <button onClick={ this.getExampleFromServerAPI.bind(this) }>Get 'example' from server API</button>
+        <p>Balance is: { balance }</p>
+        <p>Ether Balance is: { etherBalance }</p>
+        <p>Address is: { address }</p>
       </div>
     );
   }
 
 };
 
-//
-const mapStateToProps = ({ example }) => ({ example });
+const mapStateToProps = ({ balance, etherBalance, address }) => ({ balance, etherBalance, address });
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getExample }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
+export default connect(mapStateToProps)(AppContainer);

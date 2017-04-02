@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
-import { example } from './exampleReducer';
-import web3 from './web3Reducer';
+import { web3, contractInstance, account, balance, etherBalance, address } from './web3Reducer';
 const rootReducer = combineReducers({
-  example,
-  web3
+  web3,
+  contractInstance,
+  account,
+  balance,
+  etherBalance,
+  address
 });
 export default rootReducer;

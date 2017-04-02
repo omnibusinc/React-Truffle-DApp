@@ -1,5 +1,8 @@
 module.exports = function() {
   return {
-    example: 'initial value from initialState.js'
+    account: {},
+    balance: 0,
+    etherBalance: 0,
+    address: null
   };
 }
